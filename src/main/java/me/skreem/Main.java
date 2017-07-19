@@ -3,6 +3,7 @@ package me.skreem;
 import me.skreem.event.Event;
 import me.skreem.game.net.Server;
 import me.skreem.listeners.BombListener;
+import me.skreem.listeners.RoundListener;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -27,6 +28,7 @@ public class Main {
 
     private void setupIntegration() {
         Event.addListener(new BombListener());
+        Event.addListener(new RoundListener());
         Server server = new Server();
         try {
             server.start(3000);
